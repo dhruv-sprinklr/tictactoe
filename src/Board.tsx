@@ -1,6 +1,8 @@
 import Square from "./Square";
 import "./Board.css";
-function calculateWinner(squares) {
+import * as React from 'react';
+
+function calculateWinner(squares:string[]) {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -20,8 +22,8 @@ function calculateWinner(squares) {
   return null;
 }
 
-export default function Board({ xIsNext, squares, onPlay }) {
-  function handleClick(i) {
+export default function Board({ xIsNext, squares, onPlay }:{xIsNext:boolean, squares:string[], onPlay:(nextSquares:string[])=>void}) {
+  function handleClick(i:number) {
     if (calculateWinner(squares) || squares[i]) {
       return;
     }

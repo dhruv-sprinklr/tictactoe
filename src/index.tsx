@@ -1,13 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Game from "./App";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
+let domRoot=document.getElementById("root");
+if(!domRoot){
+  domRoot=document.createElement("div");
+  document.body.appendChild(domRoot);
+}
+const root=ReactDOM.createRoot(domRoot);
 root.render(
   <React.StrictMode>
-    <Game />
+    <App />
   </React.StrictMode>
 );
 
