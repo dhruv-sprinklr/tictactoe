@@ -3,7 +3,7 @@ import "./Board.css";
 import * as React from 'react';
 
 function calculateWinner(squares:string[]) {
-  const lines = [
+  const lines: number[][] = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -37,7 +37,7 @@ export default function Board({ xIsNext, squares, onPlay }:{xIsNext:boolean, squ
   }
 
   const winner = calculateWinner(squares);
-  let status;
+  let status:string;
   if (winner) {
     status = "Winner: " + winner;
   } else {
